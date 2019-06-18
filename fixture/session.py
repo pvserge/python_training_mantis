@@ -16,7 +16,7 @@ class SessionHelper:
     def logout(self):
         wd = self.app.wd
         wd.find_element_by_link_text("Logout").click()
-        wd.find_element_by_name("user")
+        wd.find_element_by_name("login_form")
 
     def is_logged_in_as(self, username):
         result = self.get_logged_user() == username
