@@ -22,6 +22,7 @@ class Application:
     def open_home_page(self):
         wd = self.wd
         wd.get(self.base_url)
+        pass
 
     def is_valid(self):
         try:
