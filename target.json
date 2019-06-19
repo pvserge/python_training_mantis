@@ -11,5 +11,11 @@
     "host": "localhost",
     "username": "daemon",
     "password": "xampp"
+  },
+  "james": {
+    "host": "localhost",
+    "port": 4555,
+    "username": "root",
+    "password": "root"
   }
 }
