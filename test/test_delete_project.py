@@ -3,6 +3,7 @@ import random
 
 
 def test_delete_project(app):
+    app.session.login(app.config['webadmin']['username'], app.config['webadmin']['password'])
     if app.project.count() == 0:
         app.project.create(Project(name="New Project"))
     old_project_list = app.project.get_project_list()
@@ -11,3 +12,5 @@ def test_delete_project(app):
     new_projects_list = app.project.get_project_list()
     old_project_list.remove(project)
     assert sorted(old_project_list, key=lambda prj: prj.name) == sorted(new_projects_list, key=lambda prj: prj.name)
+    app.session.logout()
+
